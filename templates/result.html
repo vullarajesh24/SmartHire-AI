@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <h1>Test Completed ✅</h1>
+
+    <p>Candidate Name: {{username}}</p>
+
+    <p>Questions Answered: {{ answered }}/3</p>
+
+    
+
+    <p>Score: {{ score }}/100</p>
+    <p>Status: Selected 🎉</p>
+    
+    <a href="/pdf_report">
+        <button>📄 Download PDF Report</button>
+    </a>
+</body>
+</html>

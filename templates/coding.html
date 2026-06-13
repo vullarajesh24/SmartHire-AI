@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Coding Test</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <h2>⏰ Time Remaining: <span id="timer">30:00</span></h2>
+
+    <h3 id="question">Question 1: Write a Python program to print Hello World</h3>
+
+    <textarea id="answerBox" rows="10" cols="70" placeholder="Write your answer here"></textarea>
+
+    <br><br>
+
+    <button onclick="previousQuestion()">Previous</button>
+
+    <button onclick="nextQuestion()">Next</button>
+
+    <button onclick="submitCode()">Submit Test</button>
+   <script>
+
+   let questions = [
+      "Question 1: Write a Python program to print Hello World",
+      "Question 2: Write a Python program to find the sum of two numbers",
+      "Question 3: Write a Python program to check whether a number is even or odd"
+];
+
+let current = 0;
+let answers = ["", "", ""];
+
+function nextQuestion() {
+
+    answers[current] =
+        document.getElementById("answerBox").value;
+
+    if(current < questions.length - 1) {
+
+        current++;
+
+        document.getElementById("question").innerHTML =
+            questions[current];
+
+        document.getElementById("answerBox").value =
+            answers[current];
+    }
+}
+function previousQuestion() {
+
+    answers[current] =
+        document.getElementById("answerBox").value;
+
+    if(current > 0) {
+
+        current--;
+
+        document.getElementById("question").innerHTML =
+            questions[current];
+
+        document.getElementById("answerBox").value =
+            answers[current];
+    }
+}
+function submitCode() {
+
+    answers[current] =
+        document.getElementById("answerBox").value;
+
+    let answered = 0;
+
+    for(let i = 0; i < answers.length; i++) {
+
+        if(answers[i].trim() !== "") {
+            answered++;
+        }
+    }
+
+    window.location.href =
+        "/save_score?answered=" + answered;
+}
+</script>
+   <script>
+   let timeLeft = 30 * 60; // 30 minutes
+
+   function updateTimer() {
+
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+
+        document.getElementById("timer").innerHTML =
+             minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+        if (timeLeft <= 0) {
+            alert("Time is up! Test submitted automatically.");
+
+            window.location.href = "/save_score";
+
+            return;
+        }
+
+        timeLeft--;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+</script>
+
+</body>
+</html>

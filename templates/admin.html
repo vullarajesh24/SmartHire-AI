@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+       <a href="/">Home</a>
+       <a href="/dashboard">Dashboard</a>
+       <a href="/admin">Admin</a>
+    </div>
+
+    <h1>🚀 SmartHire AI Admin Dashboard</h1>
+
+    <div class="stats-container">
+
+       <div class="card">
+           <h2>👥 Total Attempts</h2>
+           <p>{{ total_attempts }}</p>
+        </div>
+
+        <div class="card">
+            <h2>📈 Average Score</h2>
+            <p>{{ average_score }}</p>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Top Performer</h2>
+            <p>{{ top_user[0] }} - {{ top_user[1] }}</p>
+        </div>
+
+    </div>
+
+    <h2>📊 Score Distribution Chart</h2>
+
+        <img src="{{ url_for('static', filename='score_chart.png') }}"
+             alt="Score Chart"
+             width="700">
+    
+    <div class="actions">
+        <form method="GET" action="/admin">
+            <input
+                type="text"
+                name="search"
+                placeholder="🔍 Search candidate..."
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <br>
+
+        <a href="/export_excel">
+            <button>📄 Export to Excel</button>
+        </a>
+    </div>
+    <h2>🏆 Top 5 Leaderboard</h2>
+
+    <table border="1" align="center">
+         <tr>
+             <th>Rank</th>
+             <th>Username</th>
+             <th>Best Score</th>
+        </tr>
+
+        {% for user in leaderboard %}
+        <tr>
+           <td>{{ loop.index }}</td>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><br>
+    
+    <table border="1" align="center">
+
+        <tr>
+            <th>Username</th>
+            <th>Score</th>
+        </tr>
+
+        {% for row in scores %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+
+    <a href="/">
+        <button>Back to Home</button>
+    </a>
+
+</body>
+</html>

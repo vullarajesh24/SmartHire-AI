@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Verification</title>
+</head>
+<body>
+
+    <h1>🤖 Face Verification</h1>
+
+    <p>Please allow camera access.</p>
+
+    <video id="video" width="500" height="350" autoplay></video>
+
+    <br><br>
+
+    <button id="startBtn" disabled>
+        Start Coding Test
+    </button>
+
+    <script>
+    const video = document.getElementById('video');
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+
+        // Show camera preview
+        video.srcObject = stream;
+
+        // Wait 5 seconds, then go to coding test
+        setTimeout(function() {
+            window.location.href = "/coding";
+        }, 5000);
+
+    })
+    .catch(function(error) {
+
+        alert("Camera access denied!");
+
+    });
+</script>
+
+</body>
+</html>
