@@ -50,7 +50,7 @@ SmartHireAI/
 ├── static/
 ├── smarthire.db
 └── README.md
-```
+
 
 👨‍💻 Developer
 
@@ -68,3 +68,10 @@ SmartHireAI/
 * Multiple coding assessments
 * Cloud deployment
 * Enhanced analytics dashboard
+
+ 📸 Project Screenshots
+
+ 🏠 Home Page
+
+![Home Page](screenshots/home.png)
+
