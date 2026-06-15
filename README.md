@@ -1,8 +1,8 @@
-🚀 SmartHire AI
+# 🚀 SmartHire AI
 
-SmartHire AI is a web-based recruitment and coding assessment platform developed using **Python**, **Flask**, and **SQLite**. The application enables candidates to register, log in, complete a coding assessment, and view their results, while administrators can monitor performance through an interactive dashboard.
+SmartHire AI is a web-based recruitment and coding assessment platform developed using **Python**, **Flask**, and **SQLite**.
 
-✨ Features
+## ✨ Features
 
 * 👤 User Registration and Login
 * 🔐 Session-Based Authentication
@@ -16,7 +16,7 @@ SmartHire AI is a web-based recruitment and coding assessment platform developed
 * 🔍 Admin Dashboard with Candidate Search
 * 🚪 Logout Functionality
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 * Python
 * Flask
@@ -25,34 +25,35 @@ SmartHire AI is a web-based recruitment and coding assessment platform developed
 * CSS
 * JavaScript
 
-▶️ How to Run
+## ▶️ How to Run
 
 1. Clone this repository.
 2. Install the required Python packages.
-3. Start the application:
+3. Run:
 
 ```bash
 python app.py
 ```
 
-4. Open your browser and visit:
+4. Open:
 
 ```
 http://127.0.0.1:5000
 ```
 
- 📁 Project Structure
+## 📁 Project Structure
 
-```
+```text
 SmartHireAI/
 ├── app.py
 ├── templates/
 ├── static/
+├── screenshots/
 ├── smarthire.db
 └── README.md
+```
 
-
-👨‍💻 Developer
+## 👨‍💻 Developer
 
 **Rajesh Vulla**
 
@@ -60,7 +61,7 @@ SmartHireAI/
 * Python & Flask Developer
 * Aspiring Software Engineer
 
-📌 Future Enhancements
+## 📌 Future Enhancements
 
 * Password hashing for improved security
 * AI-powered face recognition
@@ -69,8 +70,8 @@ SmartHireAI/
 * Cloud deployment
 * Enhanced analytics dashboard
 
- 📸 Project Screenshots
+## 📸 Project Screenshots
 
- 🏠 Home Page
+### 🏠 Home Page
 
-
+![Home Page](screenshots/home.png)
